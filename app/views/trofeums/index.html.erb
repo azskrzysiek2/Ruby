@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trofeum</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Wartość</th>
+      <th>Zdobyty przez klub</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trofeums.each do |trofeum| %>
+      <tr>
+        <td><%= trofeum.name %></td>
+        <td><%= trofeum.value %></td>
+        <td><%= trofeum.klub_id %></td>
+        <td><%= link_to 'Pokaż', trofeum %></td>
+        <td><%= link_to 'Edytuj', edit_trofeum_path(trofeum) %></td>
+        <td><%= link_to 'Usuń', trofeum, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowe trofeum', new_trofeum_path %>

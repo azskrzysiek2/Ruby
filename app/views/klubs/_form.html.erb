@@ -1,0 +1,32 @@
+<%= form_with(model: klub, local: true) do |form| %>
+  <% if klub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(klub.errors.count, "error") %> prohibited this klub from being saved:</h2>
+
+      <ul>
+      <% klub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :klub_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :klub_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position, id: :klub_position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

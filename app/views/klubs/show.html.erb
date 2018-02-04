@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazwa:</strong>
+  <%= @klub.name %>
+</p>
+
+<p>
+  <strong>Miasti:</strong>
+  <%= @klub.city %>
+</p>
+
+<p>
+  <strong>Pozycja:</strong>
+  <%= @klub.position %>
+</p>
+
+<%= link_to 'Edytuj', edit_klub_path(@klub) %> |
+<%= link_to 'Cofnij', klubs_path %>

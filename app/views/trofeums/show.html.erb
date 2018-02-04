@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trofeum.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @trofeum.value %>
+</p>
+
+<p>
+  <strong>Klub:</strong>
+  <%= @trofeum.klub_id %>
+</p>
+
+<%= link_to 'Edytuj', edit_trofeum_path(@trofeum) %> |
+<%= link_to 'Wróć', trofeums_path %>

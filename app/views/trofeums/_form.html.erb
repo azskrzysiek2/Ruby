@@ -1,0 +1,32 @@
+<%= form_with(model: trofeum, local: true) do |form| %>
+  <% if trofeum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trofeum.errors.count, "error") %> prohibited this trofeum from being saved:</h2>
+
+      <ul>
+      <% trofeum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :trofeum_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :trofeum_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :klub_id %>
+    <%= form.number_field :klub_id, id: :trofeum_klub_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
